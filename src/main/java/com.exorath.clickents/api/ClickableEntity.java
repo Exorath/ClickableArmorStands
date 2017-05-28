@@ -20,4 +20,9 @@ public interface ClickableEntity<T extends Entity> {
      * @return an observable that emits an event whenever this entity is clicked
      */
     Observable<PlayerInteractAtEntityEvent> getInteractObservable();
+
+    /**
+     * stops all observables
+     */
+    void terminate();
 }

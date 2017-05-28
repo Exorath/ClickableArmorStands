@@ -36,6 +36,12 @@ public class ClickEntAPI implements Listener {
         return clickableEntity;
     }
 
+    public void removeEntity(Entity entity){
+        ClickableEntity clickableEntity = entities.remove(entity);
+        if(clickableEntity != null)
+            clickableEntity.terminate();
+    }
+
     @EventHandler
     public void onEntityDamage(EntityDamageEvent event){
         if(entities.containsKey(event.getEntity()))

@@ -30,4 +30,9 @@ public class IClickableEntity<T extends Entity> implements ClickableEntity {
     public Observable<PlayerInteractAtEntityEvent> getInteractObservable() {
         return clickSubject;
     }
+
+
+    public void terminate(){
+        clickSubject.onComplete();
+    }
 }
