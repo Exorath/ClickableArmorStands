@@ -29,4 +29,9 @@ public class SimpleClickableEntity<T extends Entity> implements ClickableEntity 
     public Observable<PlayerInteractAtEntityEvent> getInteractObservable() {
         return interactObservable;
     }
+
+    @Override
+    public void terminate() {
+        interactObservable.onComplete();
+    }
 }
